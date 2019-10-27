@@ -4,10 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './pages/home/home.module#HomeModule' },
-  { path: 'register', loadChildren: './pages/register/register.module#RegisterModule' },
-  { path: 'login', loadChildren: './pages/login/login.module#LoginModule' },
-  { path: 'starship', loadChildren: './pages/starship/starship.module#StarshipModule' }
+  { path: 'home', loadChildren: './pages/home/home.module#HomeModule' }
+  { path: 'login', loadChildren: './pages/login/login.module#LoginModule' }
+  // { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
