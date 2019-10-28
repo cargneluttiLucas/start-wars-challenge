@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.formGroupLogin.valid) {
-      this.route.navigate(['home']);
+      
     }
   }
 

@@ -60,8 +60,4 @@ export class RegisterComponent implements OnInit {
     return true;
   }
 
-  login() {
-    this.route.navigate(['login']);
-  }
-
 }

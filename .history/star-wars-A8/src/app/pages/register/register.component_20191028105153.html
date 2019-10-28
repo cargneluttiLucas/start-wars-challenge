@@ -11,7 +11,7 @@
           <app-textfield [text]="'User name '" [formControl]="formGroupRegister.get('userName')"></app-textfield>
           <app-textfield [text]="'Password'" [formControl]="formGroupRegister.get('pass')"></app-textfield>
         </div>
-        <div class="row padding-left-8 padding-right-8 margin-top-16 margin-bottom-8">
+        <div class="row padding-left-8 padding-right-8 margin-top-16">
           <div class="col-xs-12 ">
             <app-button [text]="'Registrar'" [widthButton]="'100%'" (clickButton)="registerUser()"
               [isLoading]="isLoading"></app-button>
