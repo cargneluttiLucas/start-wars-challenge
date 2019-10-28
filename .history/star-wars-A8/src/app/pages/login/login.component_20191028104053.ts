@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { CustomValidators } from 'src/app/shared/forms/custom-validators/custom-validators';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   isLoading: boolean;
 
-  constructor(private route: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.createForm();
@@ -31,13 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.formGroupLogin.valid) {
-      this.route.navigate(['home']);
-    }
-  }
-
-  registerUser() {
-    this.route.navigate(['register']);
+    
   }
 
 }
