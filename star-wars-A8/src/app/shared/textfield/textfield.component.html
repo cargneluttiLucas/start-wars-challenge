@@ -1,0 +1,24 @@
+<div>
+  <div class="box-textfield">
+    <div class="box-textfield__inputs">
+      <div class="box-textfield__inputs__input">
+        <input (focus)="focusFunction()" id="{{id}}" [formControl]="formControl" [ngClass]="{'disabled': disabled}"
+          name="{{id}}" (focusout)="focusOutFunction($event)"
+          type="{{typeInput}}">
+        <label [ngClass]="{'whitNotPlaceholder': formControl.value,
+                           'label-disabled': disabled}">{{ text }}</label>
+      </div>
+    </div>
+    <div class="box-textfield__lines" [ngClass]="{'box-textfield__lines--focus': isFocusLine,
+                                                    'box-textfield__lines--error': isErrorLine,
+                                                    'box-textfield__lines--errorFocus': isErrorLine && isFocusLine,
+                                                    'box-textfield__lines--success': isSuccessLine,
+                                                    'box-textfield__lines--successFocus': isSuccessLine && isFocusLine,
+                                                    'box-textfield__lines--disabled': disabled}">
+    </div>
+      <app-control-messages (handleControl)="handleControl($event)" [validationMoment]="validationMoment$"
+        hint="{{messagesHint}}" success="{{messagesSuccess}}" alternativeError="{{messagesError}}"
+        [control]="formControl">
+      </app-control-messages>
+  </div>
+</div>
