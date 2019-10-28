@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <app-card>
+      <div [formGroup]="formGroupRegister">
+        <div class="padding-left-8 padding-right-8 margin-top-16">
+          <label class="highlight-1"> Bienvenido </label>
+        </div>
+        <div class="padding-left-8 padding-right-8 margin-top-32">
+          <app-textfield [text]="'Name'" [formControl]="formGroupRegister.get('name')"></app-textfield> 
+          <app-textfield [text]="'Last name'" [formControl]="formGroupRegister.get('lastName')"></app-textfield> 
+          <app-textfield [text]="'User name '" [formControl]="formGroupRegister.get('userName')"></app-textfield> 
+          <app-textfield [text]="'Password'" [formControl]="formGroupRegister.get('pass')"></app-textfield> 
+        </div>
+        <div class="padding-left-8 padding-right-8 margin-top-16">
+          <app-button [text]="'Registrar'"></app-button>  
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>
