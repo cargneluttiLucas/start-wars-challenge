@@ -22,15 +22,16 @@ export class RegisterComponent implements OnInit {
   createForm() {
     this.formGroupRegister = new FormGroup({
       name: new FormControl(this.user.name),
-      lastName: new FormControl(this.user.lastName),
-      userName: new FormControl(this.user.userName),
-      pass: new FormControl(this.user.pass, Validators.compose([CustomValidators.number,
+      lastName: new FormControl(''),
+      userName: new FormControl(''),
+      pass: new FormControl('', Validators.compose([CustomValidators.number,
       CustomValidators.minlength(4),
       CustomValidators.maxlength(6)]))
     });
   }
 
   registerUser() {
+    if()
   }
 
 }
