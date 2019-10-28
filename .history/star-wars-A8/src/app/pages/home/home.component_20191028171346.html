@@ -1,0 +1,10 @@
+<div class="home-container">
+  <div></div>
+  <div class="home-container__ships">
+    <app-loading *ngIf="isLoading" [withBg]="isBackground" [type]="typeLoadingClass" [size]="'extra-large'">
+    </app-loading>
+    <app-starship-list [ship]="item" *ngFor="let item of listStarShip; let index=index"></app-starship-list>
+  </div>
+  <div></div>
+
+</div>

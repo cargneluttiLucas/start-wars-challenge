@@ -1,0 +1,4 @@
+<div class="home-container">
+    <app-loading *ngIf="isLoading" [withBg]="isBackground" [type]="typeLoadingClass" [size]="'medium'"></app-loading>
+  <app-starship-list [ship]="item" *ngFor="let item of listStarShip"></app-starship-list>
+</div>
