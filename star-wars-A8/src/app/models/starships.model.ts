@@ -1,4 +1,4 @@
-export class StartShips {
+export class StarShips {
   public name: string;
   public model: string;
   public manufacturer: string;
@@ -22,6 +22,7 @@ export class StartShips {
   public created: string;
   public edited: string;
   public url: string;
+  public idImg: number;
 
   constructor(
     name?: string,

@@ -1,21 +1,21 @@
-<div class="row">
+<div class="row margin-top-32 register-container">
   <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
     <app-card>
       <div [formGroup]="formGroupRegister">
-        <div class="padding-left-8 padding-right-8 margin-top-16">
+        <div class="padding-left-8 padding-right-8 margin-top-32">
           <label class="highlight-1"> Bienvenido </label>
         </div>
         <div class="padding-left-8 padding-right-8 margin-top-32">
           <app-textfield [text]="'Name'" [formControl]="formGroupRegister.get('name')"></app-textfield>
           <app-textfield [text]="'Last name'" [formControl]="formGroupRegister.get('lastName')"></app-textfield>
           <app-textfield [text]="'User name '" [formControl]="formGroupRegister.get('userName')"></app-textfield>
-          <app-textfield [text]="'Password'" [formControl]="formGroupRegister.get('pass')"></app-textfield>
+          <app-textfield [text]="'Password'" [type]="'password'" [formControl]="formGroupRegister.get('pass')"></app-textfield>
         </div>
         <div class="row padding-left-8 padding-right-8 margin-top-16 margin-bottom-8">
           <div class="col-xs-12 ">
             <app-button [text]="'Registrar'" [widthButton]="'100%'" (clickButton)="registerUser()"
-              [isLoading]="isLoading"></app-button>
-            <app-button [text]="'Login'" [widthButton]="'100%'" [type]="'link'" (clickButton)="login()" [isLoading]="isLoading">
+              [isLoading]="isLoadingRegister"></app-button>
+            <app-button [text]="'Login'" [widthButton]="'100%'" [type]="'link'" (clickButton)="login()" [isLoading]="isLoadingLogin">
             </app-button>
           </div>
         </div>

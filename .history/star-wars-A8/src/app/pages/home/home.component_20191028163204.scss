@@ -1,0 +1,9 @@
+.home-container {
+  display: flex;
+
+  &__ships {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

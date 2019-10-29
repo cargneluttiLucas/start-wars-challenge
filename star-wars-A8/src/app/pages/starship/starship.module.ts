@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StarshipComponent } from './starship.component';
 import { StartshipRoutingModule } from './startship.routing';
+import { SharedModule } from 'src/app/shared/sharesd.module';
 
 
 
@@ -10,6 +11,7 @@ import { StartshipRoutingModule } from './startship.routing';
   exports: [StarshipComponent],
   imports: [
     CommonModule,
+    SharedModule,
     StartshipRoutingModule
   ]
 })

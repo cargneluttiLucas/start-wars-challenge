@@ -1,1 +1,26 @@
-<app-starship-list></app-starship-list>
+<header>
+  <app-card *ngIf="!isLoading">
+    <div class="header-container">
+      <app-button [text]="'Cerrar sesión'" (clickButton)="claseSession()"></app-button>
+    </div>
+  </app-card>
+</header>
+
+<div class="home-container margin-top-32 margin-bottom-32">
+  <div class="home-container__ships">
+    <app-loading *ngIf="isLoading" [type]="'primary'" [size]="'extra-large'">
+    </app-loading>
+    <app-card>
+      <app-starship-list [ship]="item" *ngFor="let item of listStarShip">
+      </app-starship-list>
+    </app-card>
+  </div>
+</div>
+
+
+<app-card *ngIf="!isLoading">
+  <app-button [text]="'1'" (clickButton)="pagination(1)"></app-button>
+  <app-button [text]="'2'" (clickButton)="pagination(2)"></app-button>
+  <app-button [text]="'3'" (clickButton)="pagination(3)"></app-button>
+  <app-button [text]="'4'" (clickButton)="pagination(4)"></app-button>
+</app-card>
