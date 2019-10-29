@@ -22,6 +22,7 @@ export class StarShips {
   public created: string;
   public edited: string;
   public url: string;
+  public idImg: number;
 
   constructor(
     name?: string,

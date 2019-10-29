@@ -36,7 +36,7 @@ export class Login1Service {
     const subject = new Subject<any>();
     setTimeout(() => {
       if (localStorage.userActive) {
-        subject.next(true);
+        subject.next(localStorage.userActive);
       } else {
         subject.next(false);
       }

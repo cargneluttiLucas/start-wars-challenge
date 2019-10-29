@@ -4,6 +4,7 @@ import { StarShips } from 'src/app/models/starships.model';
 import { Login1Service } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ import { Subscription } from 'rxjs';
 export class HomeComponent implements OnInit, OnDestroy {
 
   listStarShip: StarShips[] = [];
-
+  userActive = new User();
   isLoading = false;
   isActiveSubscription = new Subscription();
 
@@ -30,16 +31,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (result === false) {
         this.cdRef.detectChanges();
         this.router.navigate(['login']);
-      }
-    });
-    this.startShipService.allShips().subscribe((item) => {
-      console.log(item);
-      if (item) {
-        this.listStarShip = item.results;
-        this.isLoading = false;
+      } else {
+        this.userActive = result;
+        console.log(this.userActive);
         this.cdRef.detectChanges();
       }
     });
+    this.getAllShips(1);
+
   }
 
   claseSession() {
@@ -48,6 +47,46 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.router.navigate(['login']);
       }
     });
+  }
+
+  getAllShips(id) {
+    this.startShipService.allShips(id).subscribe((item) => {
+      if (item) {
+        this.listStarShip = item.results;
+        switch (id) {
+          case 1: {
+            this.listStarShip.forEach( (ship , index) => {
+              ship.idImg = index + 1;
+            });
+            break;
+          }
+          case 2: {
+            this.listStarShip.forEach( (ship , index) => {
+              ship.idImg = index + 11;
+            });
+            break;
+          }
+          case 3: {
+            this.listStarShip.forEach( (ship , index) => {
+              ship.idImg = 21;
+            });
+            break;
+          }
+          case 4: {
+            this.listStarShip.forEach( (ship , index) => {
+              ship.idImg = 21;
+            });
+            break;
+          }
+        }
+        this.isLoading = false;
+        this.cdRef.detectChanges();
+      }
+    });
+  }
+
+  pagination(id: any) {
+    this.getAllShips(id);
   }
 
   ngOnDestroy() {

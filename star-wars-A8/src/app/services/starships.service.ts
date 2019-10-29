@@ -13,8 +13,8 @@ export class StarshipsService {
   constructor(private http: HttpClient) { }
 
 
-  allShips(): Observable<any> {
-    return this.http.get(this.url);
+  allShips(id: any): Observable<any> {
+    return this.http.get(this.url + '/?page=' + id);
   }
 
   shipById(id: number): Observable<any> {
