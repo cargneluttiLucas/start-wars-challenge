@@ -1,1 +1,27 @@
-<p>starship works!</p>
+<header>
+  <app-card *ngIf="!isLoading">
+    <div class="header-container">
+      <app-button [text]="'Volver'" (clickButton)="backToHome()"></app-button>
+      <app-button [text]="'Cerrar sesión'" (clickButton)="claseSession()"></app-button>
+    </div>
+  </app-card>
+</header>
+
+
+<div class="startship-container margin-top-32 margin-bottom-32">
+  <app-loading *ngIf="isLoading" [type]="'primary'" [size]="'extra-large'">
+  </app-loading>
+  <app-card *ngIf="!isLoading">
+    <div class="startship-container__text">
+      <div class="title">Nombre: {{ship.name}}</div>
+      <div class="subtitle">Modelo: {{ship.model}}</div>
+      <div class="subtitle">Capacidad de carga: {{ship.cargo_capacity}}</div>
+      <div class="subtitle">Manufacturado por: {{ship.manufacturer}}</div>
+      <div class="subtitle">Costo en creditos: {{ship.cost_in_credits}}</div>
+      <div class="subtitle">Pasajeros: {{ship.passengers}}</div>
+      <div class="subtitle">Consumibles: {{ship.consumables}}</div>
+      <div class="subtitle">Calificacion de hiperimpulsor: {{ship.hyperdrive_rating}}</div>
+      <div class="subtitle">MGLT: {{ship.MGLT}}</div>
+    </div>
+  </app-card>
+</div>

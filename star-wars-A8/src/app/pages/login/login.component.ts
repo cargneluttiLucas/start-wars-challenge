@@ -48,6 +48,8 @@ export class LoginComponent implements OnInit, OnDestroy {
           if (result) {
             this.isLoadingLogin = false;
             this.route.navigate(['home']);
+          } else {
+            this.isLoadingLogin = false;
           }
         });
     }

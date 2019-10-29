@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.router.navigate(['login']);
       } else {
         this.userActive = result;
-        console.log(this.userActive);
         this.cdRef.detectChanges();
       }
     });

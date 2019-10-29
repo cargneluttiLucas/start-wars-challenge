@@ -25,7 +25,6 @@ export class UserService {
           user.id = lastUser.id + 1;
         }
         users.push(user);
-        console.log('post add', user);
         this.setUser(users);
         subject.next(user);
       }

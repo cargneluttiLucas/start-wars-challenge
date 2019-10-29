@@ -17,7 +17,7 @@ export class StarshipsService {
     return this.http.get(this.url + '/?page=' + id);
   }
 
-  shipById(id: number): Observable<any> {
+  shipById(id): Observable<any> {
     return this.http.get(this.url + '/' + id);
   }
 }

@@ -54,43 +54,8 @@ describe('Custom Validators Test', () => {
     expect(control.status).toEqual('INVALID');
   });
 
-  it('should date invalid', () => {
-    const control = new FormControl('abc', Validators.compose([CustomValidators.date]));
-    expect(control.status).toEqual('INVALID');
-  });
-
-  it('should date is Empty', () => {
-    const control = new FormControl('', Validators.compose([CustomValidators.date]));
-    expect(control.status).toEqual('VALID');
-  });
-
-  it('should date sin barras valid', () => {
-    const control = new FormControl('12/02/1990', Validators.compose([CustomValidators.dateSinBarras]));
-    expect(control.status).toEqual('INVALID');
-  });
-
-  it('should date sin barras no value', () => {
-    const control = new FormControl('abc', Validators.compose([CustomValidators.dateSinBarras]));
-    expect(control.status).toEqual('INVALID');
-  });
-
-  it('should date sin barras is emty', () => {
-    const control = new FormControl('', Validators.compose([CustomValidators.dateSinBarras]));
-    expect(control.status).toEqual('VALID');
-  });
-
   it('should minValue valid', () => {
     const control = new FormControl('600', Validators.compose([CustomValidators.minValue(500)]));
-    expect(control.status).toEqual('VALID');
-  });
-
-  it('should pin INVALID', () => {
-    const control = new FormControl('600', Validators.compose([CustomValidators.pin]));
-    expect(control.status).toEqual('INVALID');
-  });
-
-  it('should pin VALID', () => {
-    const control = new FormControl('8624', Validators.compose([CustomValidators.pin]));
     expect(control.status).toEqual('VALID');
   });
 
@@ -141,16 +106,6 @@ describe('Custom Validators Test', () => {
 
   it('should minLength', () => {
     const control = new FormControl('321654', Validators.compose([CustomValidators.minlength(5)]));
-    expect(control.status).toEqual('VALID');
-  });
-
-  it('should alphanumber', () => {
-    const control = new FormControl('123', Validators.compose([CustomValidators.alphanumber]));
-    expect(control.status).toEqual('VALID');
-  });
-
-  it('should alphanumber', () => {
-    const control = new FormControl('asd123', Validators.compose([CustomValidators.alphanumber]));
     expect(control.status).toEqual('VALID');
   });
 });

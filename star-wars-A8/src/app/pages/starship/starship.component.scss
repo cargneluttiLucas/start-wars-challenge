@@ -1,0 +1,29 @@
+@import "../../styles/animations";
+@import "../../styles/colors";
+@import "../../styles/variables";
+@import "../../styles/typography";
+@import "../../styles/spaces";
+@import "../../styles/modals";
+@import "../../styles/vendor/reset";
+@import "../../styles/vendor/flexboxgrid/flexboxgrid";
+@import "../../styles/vendor/flexboxgrid/mixins/flex";
+
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  
+}
+
+.startship-container {
+  display: flex;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+}

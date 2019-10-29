@@ -9,7 +9,7 @@ const routes: Routes = [
     component: StarshipComponent,
     children: [
       {
-        path: 'starship',
+        path: 'starship/:id',
         component: StarshipComponent
       }
     ]
