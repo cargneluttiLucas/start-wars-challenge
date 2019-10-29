@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { User } from '../models/user.model';
 import { isEmpty } from '../shared/forms/custom-validators/custom-validators';
-import { isUndefined } from 'util';
+import { isUndefined, isError } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,6 @@ export class UserService {
 
   createUser(user: User): Observable<any> {
     const subject = new Subject<any>();
-    console.log(user);
     setTimeout(() => {
       if (user.name !== '' && user.lastName !== '') {
         const users = this.getUsers();
@@ -35,9 +34,13 @@ export class UserService {
     return subject.asObservable();
   }
 
-  getAllUsers() { }
+  getAllUsers(): User[] {
+    return this.getUsers();
+  }
 
-  getUserById() { }
+  getUserById(id: number) {
+    this.getUsers().find(user => user.id === id);
+  }
 
   private getUsers(): User[] {
     if (!localStorage.users) {

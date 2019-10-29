@@ -1,9 +1,20 @@
-<div class="home-container">
-  <div></div>
+<header>
+  <app-card *ngIf="!isLoading">
+    <div class="header-container">
+      <app-button [text]="'Cerrar sesión'" (clickButton)="claseSession()"></app-button>
+    </div>
+  </app-card>
+</header>
+
+<div class="home-container margin-top-32 margin-bottom-32">
   <div class="home-container__ships">
-    <app-loading *ngIf="isLoading" [withBg]="isBackground" [type]="typeLoadingClass" [size]="'extra-large'">
+    <app-loading *ngIf="isLoading" [type]="'primary'" [size]="'extra-large'">
     </app-loading>
-    <app-starship-list [ship]="item" [index]="index + 1" *ngFor="let item of listStarShip; let index=index"></app-starship-list>
+    <app-card>
+      <app-starship-list [ship]="item" [index]="index + 1" *ngFor="let item of listStarShip; let index=index">
+      </app-starship-list>
+    </app-card>
   </div>
-  <div class="home-container__ships"></div>
+  <div class="home-container__pagination">
+  </div>
 </div>

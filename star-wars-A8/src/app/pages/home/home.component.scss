@@ -1,3 +1,22 @@
+@import "../../styles/animations";
+@import "../../styles/colors";
+@import "../../styles/variables";
+@import "../../styles/typography";
+@import "../../styles/spaces";
+@import "../../styles/modals";
+@import "../../styles/vendor/reset";
+@import "../../styles/vendor/flexboxgrid/flexboxgrid";
+@import "../../styles/vendor/flexboxgrid/mixins/flex";
+
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .home-container {
   display: flex;
 
@@ -5,5 +24,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    // animation-duration: 0.5s;
+    // animation-name: fadein;
   }
 }

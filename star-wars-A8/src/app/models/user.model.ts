@@ -1,18 +1,17 @@
 export class User {
   public id: number;
+  public active: boolean;
   public name: string;
   public lastName: string;
   public userName: string;
-  public pass: number;
+  public pass: string;
 
   constructor(
-    id?: number,
     name?: string,
     lastName?: string,
     userName?: string,
-    pass?: number,
+    pass?: string,
   ) {
-    this.id = id;
     this.name = name;
     this.lastName = lastName;
     this.userName = userName;

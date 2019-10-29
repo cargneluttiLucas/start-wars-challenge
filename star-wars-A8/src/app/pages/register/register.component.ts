@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
   formGroupRegister: FormGroup;
   user: User;
 
-  isLoading: boolean;
+  isLoadingRegister = false;
+  isLoadingLogin = false;
 
   constructor(private userService: UserService, private route: Router) { }
 
@@ -35,33 +36,40 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser() {
-    this.isLoading = true;
     if (this.createUser() && this.formGroupRegister.valid) {
+      this.isLoadingRegister = true;
       this.userService.createUser(this.user).subscribe((response) => {
         if (response) {
           this.route.navigate(['login']);
+          this.isLoadingRegister = false;
         } else {
           // TODO: aviso de error
+          this.isLoadingRegister = false;
         }
       });
     }
-    this.isLoading = false;
   }
 
   private createUser() {
-    const user = this.formGroupRegister.value;
-    console.log('createUser', user);
-    this.user = new User(
-      user.name,
-      user.lastName,
-      user.userName,
-      user.pass
-    );
-    return true;
+    if (this.formGroupRegister.valid) {
+      const user = this.formGroupRegister.value;
+      this.user = new User(
+        user.name,
+        user.lastName,
+        user.userName,
+        btoa(user.pass)
+      );
+      return true;
+    }
+    return false;
   }
 
   login() {
-    this.route.navigate(['login']);
+    this.isLoadingLogin = true;
+    setTimeout(() => {
+      this.isLoadingLogin = false;
+      this.route.navigate(['login']);
+    }, 500);
   }
 
 }

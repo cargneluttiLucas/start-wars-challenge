@@ -7,3 +7,8 @@
 @import "../../styles/vendor/reset";
 @import "../../styles/vendor/flexboxgrid/flexboxgrid";
 @import "../../styles/vendor/flexboxgrid/mixins/flex";
+
+.register-container {
+  animation-duration: 0.5s;
+  animation-name: fadein;
+}
